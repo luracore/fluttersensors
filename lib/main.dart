@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
       title: 'Meu Aplicativo',
       theme: ThemeData(
         colorSchemeSeed: Colors.blue,
-        useMaterial3: true,
       ),
       home: const HomePage(),
     );

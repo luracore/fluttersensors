@@ -11,20 +11,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:sensores/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('Home page lists the available sensors', (
+    WidgetTester tester,
+  ) async {
     await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Tela Inicial'), findsOneWidget);
+    expect(find.text('Acelerômetro'), findsOneWidget);
+    expect(find.text('Giroscópio'), findsOneWidget);
+    expect(find.byType(ListTile), findsWidgets);
   });
 }
