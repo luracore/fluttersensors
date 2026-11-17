@@ -8,8 +8,6 @@ import 'sensores/barometer_page.dart';
 import 'sensores/proximity_page.dart';
 import 'sensores/light_sensor_page.dart';
 import 'sensores/gravity_page.dart';
-import 'sensores/rotation_page.dart';
-import 'sensores/step_counter_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,6 +18,12 @@ class HomePage extends StatelessWidget {
       'descricao': 'Mede a aceleração do dispositivo',
       'icone': Icons.speed,
       'rota': AccelerometerPage(),
+    },
+    {
+      'titulo': 'Gravidade',
+      'descricao': 'Mede a gravidade',
+      'icone': Icons.speed,
+      'rota': GravityPage(),
     },
     {
       'titulo': 'Giroscópio',
@@ -56,24 +60,6 @@ class HomePage extends StatelessWidget {
       'descricao': 'Mede a intensidade da luz no ambiente',
       'icone': Icons.light_mode,
       'rota': LightSensorPage(),
-    },
-    {
-      'titulo': 'Gravidade',
-      'descricao': 'Detecta a direção e intensidade da gravidade',
-      'icone': Icons.public,
-      'rota': GravityPage(),
-    },
-    {
-      'titulo': 'Rotação',
-      'descricao': 'Identifica a orientação espacial do dispositivo',
-      'icone': Icons.screen_rotation_alt,
-      'rota': RotationPage(),
-    },
-    {
-      'titulo': 'Contador de passos',
-      'descricao': 'Registra a quantidade de passos realizados',
-      'icone': Icons.directions_walk,
-      'rota': StepCounterPage(),
     },
   ];
 
