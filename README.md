@@ -1,17 +1,84 @@
-# sensores
+# Sensores: demonstração dos sensores do smartphone
 
-A new Flutter project.
+App Flutter desenvolvido para o workshop de **LLDM**. Cada página do app demonstra, em tempo real, um sensor do celular: o que ele mede e para que é usado.
 
-## Getting Started
+## Sensores explorados
 
-This project is a starting point for a Flutter application.
+| Sensor | O que faz | Exemplo de uso | Status |
+|---|---|---|---|
+| **Acelerômetro** | Mede a aceleração linear nos eixos X, Y e Z, incluindo a gravidade. | Orientação da tela, detectar "chacoalhar", contar passos. | ✅ |
+| **Giroscópio** | Mede a velocidade de rotação nos três eixos. | Realidade aumentada, estabilização de imagem, panoramas 360°. | 🚧 |
+| **Magnetômetro** | Mede o campo magnético ao redor do aparelho (bússola digital). | Navegação e direção cardeal. | 🚧 |
+| **Proximidade** | Detecta objetos próximos à tela sem contato (infravermelho). | Apagar a tela ao encostar o celular no ouvido durante uma ligação. | 🚧 |
+| **Luz ambiente** | Mede a intensidade de luz do ambiente. | Brilho automático da tela. | 🚧 |
+| **Barômetro** | Mede a pressão atmosférica. | Altimetria (em que andar você está) e previsão do tempo. | 🚧 |
+| **GPS / GNSS** | Obtém a geolocalização via satélite. | Mapas, entregas, rotas, latitude e longitude. | 🚧 |
+| **Gravidade** | Isola a direção e a intensidade da gravidade. | Saber a inclinação do aparelho, nivelamento. | 🚧 |
+| **Rotação** | Identifica a orientação espacial do aparelho. | Jogos, AR, controle por movimento. | 🚧 |
+| **Contador de passos** | Conta os passos dados pelo usuário. | Apps de saúde e atividade física. | 🚧 |
 
-A few resources to get you started if this is your first Flutter project:
+> Nem todo aparelho tem todos os sensores (barômetro e luz ambiente, por exemplo, faltam em vários modelos). Nesse caso a página avisa que o sensor não está disponível.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Pré-requisitos
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) (Dart `^3.13.7`)
+- Android Studio ou o Android SDK (para `adb` e drivers)
+- Um **smartphone físico**: o emulador simula poucos sensores e não serve para a demonstração.
+
+Verifique o ambiente com:
+
+```bash
+flutter doctor
+```
+
+## Como rodar (modo depuração)
+
+1. **Ative o modo desenvolvedor no celular** (Android): *Configurações → Sobre o telefone →* toque 7 vezes em *Número da versão*.
+2. Em *Opções do desenvolvedor*, ative a **Depuração USB** (ou *Depuração por Wi-Fi*).
+3. Conecte o celular ao computador e aceite a autorização de depuração que aparece na tela.
+4. Na pasta do projeto:
+
+```bash
+flutter pub get
+flutter devices      # o celular deve aparecer na lista
+flutter run          # compila e instala em modo debug
+```
+
+Se houver mais de um dispositivo: `flutter run -d <id-do-dispositivo>`.
+
+Atalhos no terminal durante o `flutter run`:
+
+| Tecla | Ação |
+|---|---|
+| `r` | Hot reload (aplica mudanças mantendo o estado) |
+| `R` | Hot restart (reinicia o app) |
+| `q` | Encerra |
+
+Pelo VS Code: abra o projeto, selecione o celular na barra inferior e aperte **F5**.
+
+## Estrutura
+
+```
+lib/
+  main.dart                 # ponto de entrada
+  pages/
+    home_page.dart          # lista de sensores
+    sensores/               # uma página por sensor
+test/
+  widget_test.dart
+```
+
+## Como contribuir
+
+Cada integrante implementa a página do(s) seu(s) sensor(es) numa branch própria (`feat/<sensor>`) e abre um Pull Request para a `main`.
+O padrão de código, os pacotes de cada sensor e o checklist antes do PR estão no **[AGENTS.md](AGENTS.md)**. Leia antes de começar, principalmente se for usar IA para gerar o código.
+
+```bash
+flutter analyze
+flutter test
+```
+
+## Pacotes
+
+- [`sensors_plus`](https://pub.dev/packages/sensors_plus): acelerômetro, giroscópio, magnetômetro, barômetro
+- [`material_ui`](https://pub.dev/packages/material_ui): widgets Material
