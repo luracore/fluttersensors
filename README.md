@@ -7,12 +7,12 @@ App Flutter desenvolvido para o workshop de **LLDM**. Cada página do app demons
 | Sensor | O que faz | Exemplo de uso | Status |
 |---|---|---|---|
 | **Acelerômetro** | Mede a aceleração linear nos eixos X, Y e Z, incluindo a gravidade. | Orientação da tela, detectar "chacoalhar", contar passos. | ✅ |
-| **Giroscópio** | Mede a velocidade de rotação nos três eixos. | Realidade aumentada, estabilização de imagem, panoramas 360°. | 🚧 |
+| **Giroscópio** | Mede a velocidade de rotação nos três eixos. | Realidade aumentada, estabilização de imagem, panoramas 360°. | ✅ |
 | **Magnetômetro** | Mede o campo magnético ao redor do aparelho (bússola digital). | Navegação e direção cardeal. | 🚧 |
 | **Proximidade** | Detecta objetos próximos à tela sem contato (infravermelho). | Apagar a tela ao encostar o celular no ouvido durante uma ligação. | 🚧 |
 | **Luz ambiente** | Mede a intensidade de luz do ambiente. | Brilho automático da tela. | 🚧 |
 | **Barômetro** | Mede a pressão atmosférica. | Altimetria (em que andar você está) e previsão do tempo. | 🚧 |
-| **GPS / GNSS** | Obtém a geolocalização via satélite. | Mapas, entregas, rotas, latitude e longitude. | 🚧 |
+| **GPS / GNSS** | Obtém a geolocalização via satélite. | Mapas, entregas, rotas, latitude e longitude. | ✅ |
 | **Gravidade** | Isola a direção e a intensidade da gravidade. | Saber a inclinação do aparelho, nivelamento. | 🚧 |
 | **Rotação** | Identifica a orientação espacial do aparelho. | Jogos, AR, controle por movimento. | 🚧 |
 | **Contador de passos** | Conta os passos dados pelo usuário. | Apps de saúde e atividade física. | 🚧 |
@@ -21,7 +21,7 @@ App Flutter desenvolvido para o workshop de **LLDM**. Cada página do app demons
 
 ## Pré-requisitos
 
-- [Flutter SDK](https://docs.flutter.dev/get-started/install) (Dart `^3.13.7`)
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) **3.47 ou superior** (Dart `^3.13.7`). Versões antigas falham no `flutter pub get`; atualize com `flutter upgrade`.
 - Android Studio ou o Android SDK (para `adb` e drivers)
 - Um **smartphone físico**: o emulador simula poucos sensores e não serve para a demonstração.
 
@@ -81,4 +81,5 @@ flutter test
 ## Pacotes
 
 - [`sensors_plus`](https://pub.dev/packages/sensors_plus): acelerômetro, giroscópio, magnetômetro, barômetro
+- [`geolocator`](https://pub.dev/packages/geolocator): GPS / GNSS
 - [`material_ui`](https://pub.dev/packages/material_ui): widgets Material
