@@ -11,7 +11,7 @@ class BarometerPage extends StatefulWidget {
 }
 
 class _BarometerPageState extends State<BarometerPage> {
-  // Pressão média ao nível do mar. ponytail: valor padrão; para altitude absoluta
+  // Pressão média ao nível do mar. Obs.: valor padrão; para altitude absoluta
   // precisa, troque pela pressão ao nível do mar do dia (boletim meteorológico).
   static const double _pressaoNivelDoMar = 1013.25;
 
