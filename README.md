@@ -8,14 +8,12 @@ App Flutter desenvolvido para o workshop de **LLDM**. Cada página do app demons
 |---|---|---|---|
 | **Acelerômetro** | Mede a aceleração linear nos eixos X, Y e Z, incluindo a gravidade. | Orientação da tela, detectar "chacoalhar", contar passos. | ✅ |
 | **Giroscópio** | Mede a velocidade de rotação nos três eixos. | Realidade aumentada, estabilização de imagem, panoramas 360°. | ✅ |
-| **Magnetômetro** | Mede o campo magnético ao redor do aparelho (bússola digital). | Navegação e direção cardeal. | 🚧 |
-| **Proximidade** | Detecta objetos próximos à tela sem contato (infravermelho). | Apagar a tela ao encostar o celular no ouvido durante uma ligação. | 🚧 |
-| **Luz ambiente** | Mede a intensidade de luz do ambiente. | Brilho automático da tela. | 🚧 |
-| **Barômetro** | Mede a pressão atmosférica. | Altimetria (em que andar você está) e previsão do tempo. | 🚧 |
+| **Magnetômetro** | Mede o campo magnético ao redor do aparelho (bússola digital). | Navegação e direção cardeal. | ✅ |
+| **Proximidade** | Detecta objetos próximos à tela sem contato (infravermelho). | Apagar a tela ao encostar o celular no ouvido durante uma ligação. | ✅ |
+| **Luz ambiente** | Mede a intensidade de luz do ambiente. | Brilho automático da tela. | ✅ |
+| **Barômetro** | Mede a pressão atmosférica. | Altimetria (em que andar você está) e previsão do tempo. | ✅ |
 | **GPS / GNSS** | Obtém a geolocalização via satélite. | Mapas, entregas, rotas, latitude e longitude. | ✅ |
-| **Gravidade** | Isola a direção e a intensidade da gravidade. | Saber a inclinação do aparelho, nivelamento. | 🚧 |
-| **Rotação** | Identifica a orientação espacial do aparelho. | Jogos, AR, controle por movimento. | 🚧 |
-| **Contador de passos** | Conta os passos dados pelo usuário. | Apps de saúde e atividade física. | 🚧 |
+| **Gravidade** | Isola a direção e a intensidade da gravidade. | Saber a inclinação do aparelho, nivelamento. | ✅ |
 
 > Nem todo aparelho tem todos os sensores (barômetro e luz ambiente, por exemplo, faltam em vários modelos). Nesse caso a página avisa que o sensor não está disponível.
 
@@ -82,4 +80,6 @@ flutter test
 
 - [`sensors_plus`](https://pub.dev/packages/sensors_plus): acelerômetro, giroscópio, magnetômetro, barômetro
 - [`geolocator`](https://pub.dev/packages/geolocator): GPS / GNSS
+- [`proximity_sensor`](https://pub.dev/packages/proximity_sensor): sensor de proximidade
+- [`light`](https://pub.dev/packages/light): luz ambiente (só Android)
 - [`material_ui`](https://pub.dev/packages/material_ui): widgets Material
