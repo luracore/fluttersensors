@@ -17,7 +17,7 @@ class _GyroscopePageState extends State<GyroscopePage> {
   String? _erro;
 
   // Ângulo acumulado no eixo Z (integração da velocidade angular).
-  // ponytail: integração simples acumula drift com o tempo; o botão "Zerar" recalibra.
+  // Obs.: integração simples acumula drift com o tempo; o botão "Zerar" recalibra.
   double _anguloZ = 0;
   DateTime? _ultimaLeitura;
 
