@@ -1,5 +1,4 @@
 import 'package:material_ui/material_ui.dart';
-
 import 'package:sensors_plus/sensors_plus.dart';
 
 class AccelerometerPage extends StatefulWidget {
@@ -10,12 +9,12 @@ class AccelerometerPage extends StatefulWidget {
 }
 
 class _AccelerometerPageState extends State<AccelerometerPage> {
-  late final Stream<AccelerometerEvent> _accelerometerStream;
+  late final Stream<UserAccelerometerEvent> _accelerometerStream;
 
   @override
   void initState() {
     super.initState();
-    _accelerometerStream = accelerometerEventStream();
+    _accelerometerStream = userAccelerometerEventStream();
   }
 
   @override
@@ -24,7 +23,7 @@ class _AccelerometerPageState extends State<AccelerometerPage> {
       appBar: AppBar(
         title: const Text('Acelerômetro'),
       ),
-      body: StreamBuilder<AccelerometerEvent>(
+      body: StreamBuilder<UserAccelerometerEvent>(
         stream: _accelerometerStream,
         builder: (context, snapshot) {
           if (snapshot.hasError) {
@@ -59,8 +58,18 @@ class _AccelerometerPageState extends State<AccelerometerPage> {
                 const SizedBox(height: 20),
 
                 const Text(
-                  'Valores em m/s²',
+                  'Aceleração linear em m/s²',
                   style: TextStyle(color: Colors.grey),
+                ),
+
+                const SizedBox(height: 30),
+
+                const Text(
+                  'A aceleração linear representa a aceleração '
+                  'do aparelho sem a componente da gravidade. '
+                  'É utilizada para detectar movimentos, '
+                  'deslocamentos e atividades do dispositivo.',
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),
