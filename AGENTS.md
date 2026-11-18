@@ -28,8 +28,6 @@ lib/
       proximity_page.dart
       light_sensor_page.dart
       gravity_page.dart
-      rotation_page.dart
-      step_counter_page.dart
 test/
   widget_test.dart
 ```
@@ -44,12 +42,10 @@ Não crie pastas novas (`widgets/`, `services/`, `utils/`, etc.) sem combinar co
 | Giroscópio | `gyroscope_page.dart` | `sensors_plus`: `gyroscopeEventStream()` | rad/s |
 | Magnetômetro | `magnetometer_page.dart` | `sensors_plus`: `magnetometerEventStream()` | µT |
 | Barômetro | `barometer_page.dart` | `sensors_plus`: `barometerEventStream()` | hPa |
-| Gravidade | `gravity_page.dart` | `sensors_plus`: acelerômetro − `userAccelerometerEventStream()` | m/s² |
-| Proximidade | `proximity_page.dart` | pacote sugerido: `proximity_sensor` | perto/longe |
-| Luz ambiente | `light_sensor_page.dart` | pacote sugerido: `light` (só Android) | lux |
-| GPS | `gps_page.dart` | pacote sugerido: `geolocator` | lat/long (graus) |
-| Rotação | `rotation_page.dart` | `sensors_plus` (giroscópio / acelerômetro) | graus ou rad/s |
-| Contador de passos | `step_counter_page.dart` | pacote sugerido: `pedometer` | passos |
+| Gravidade | `gravity_page.dart` | `sensors_plus`: `accelerometerEventStream()` | m/s² |
+| Proximidade | `proximity_page.dart` | `proximity_sensor` | perto/longe |
+| Luz ambiente | `light_sensor_page.dart` | `light` (só Android) | lux |
+| GPS | `gps_page.dart` | `geolocator` | lat/long (graus) |
 
 Regras para dependências:
 - **Prefira o `sensors_plus`**, que já está instalado. Só adicione outro pacote quando ele não cobrir o sensor.
